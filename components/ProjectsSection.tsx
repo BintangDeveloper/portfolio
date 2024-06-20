@@ -4,6 +4,22 @@ import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
+/*
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tag: string[];
+  gitUrl: string;
+  previewUrl: string;
+}
+
+interface ProjectsDataProps {
+  projectsData: Project[];
+}
+*/
+
 const projectsData = [
   {
     id: 1,
@@ -61,12 +77,12 @@ const projectsData = [
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection: React.FC = () => {
   const [tag, setTag] = useState("All");
-  const ref = useRef(null);
+  const ref = useRef<HTMLUListElement>(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
+  const handleTagChange = (newTag: string) => {
     setTag(newTag);
   };
 
