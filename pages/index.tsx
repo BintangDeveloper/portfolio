@@ -11,7 +11,7 @@ export default function Index() {
       <Navbar />
       <div className="container mt-24 mx-auto px-12 py-4">
         <HeroSection />
-        <AchievementsSection />
+        {/* <AchievementsSection /> */}
         <AboutSection />
         <ProjectsSection />
       </div>
