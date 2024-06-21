@@ -54,7 +54,7 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-6 md:mb-10 hidden md:block">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-4 md:mb-8 hidden md:block">
         About Me
       </h2>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
