@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, g
         </div>
       </div>
       <div className="text-white mt-3 bg-[#181818] py-6 px-4 rounded-b-xl">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
+        <span className="text-xl font-semibold mb-2">{title}</span>
         <p className="text-[#ADB7BE]">{description}</p>
       </div>
     </div>
