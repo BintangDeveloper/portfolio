@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ControllerRenderProps, FieldValues } from 'react-hook-form';
+import { ControllerRenderProps } from 'react-hook-form';
 
 declare global {
   interface Window {
@@ -7,9 +7,16 @@ declare global {
   }
 }
 
+interface FormData {
+  email: string;
+  subject: string;
+  message: string;
+  turnstileToken: string;
+}
+
 interface TurnstileProps {
   siteKey: string;
-  field: ControllerRenderProps<FieldValues, string>;
+  field: ControllerRenderProps<FormData, "turnstileToken">;
 }
 
 const Turnstile: React.FC<TurnstileProps> = ({ siteKey, field }) => {
