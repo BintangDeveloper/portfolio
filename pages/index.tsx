@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+//import AchievementsSection from "@/components/AchievementsSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import AchievementsSection from "@/components/AchievementsSection";
 
 export default function Index() {
   return (
@@ -19,6 +20,7 @@ export default function Index() {
         {/* <AchievementsSection /> */}
         <AboutSection />
         <ProjectsSection />
+        <ContactSection />
       </div>
       <Footer />
     </main>
