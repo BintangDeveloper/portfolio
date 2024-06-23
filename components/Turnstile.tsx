@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { ControllerRenderProps, useFormContext } from "react-hook-form";
+import { useEffect, useRef } from 'react';
+import { ControllerRenderProps, FieldValues } from 'react-hook-form';
 
 declare global {
   interface Window {
@@ -9,11 +9,10 @@ declare global {
 
 interface TurnstileProps {
   siteKey: string;
-  name: keyof FormData;
+  field: ControllerRenderProps<FieldValues, string>;
 }
 
-const Turnstile: React.FC<TurnstileProps> = ({ siteKey, name }) => {
-  const { setValue } = useFormContext<FormData>();
+const Turnstile: React.FC<TurnstileProps> = ({ siteKey, field }) => {
   const turnstileRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -21,19 +20,21 @@ const Turnstile: React.FC<TurnstileProps> = ({ siteKey, name }) => {
       if (window.turnstile) {
         window.turnstile.render(turnstileRef.current, {
           sitekey: siteKey,
-          callback: (token: string) => setValue(name, token),
+          callback: (token: string) => field.onChange(token),
         });
-      } else {
-        const script = document.createElement("script");
-        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-        script.async = true;
-        script.onload = loadTurnstile;
-        document.body.appendChild(script);
       }
     };
 
-    loadTurnstile();
-  }, [siteKey, name, setValue]);
+    if (!window.turnstile) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.onload = loadTurnstile;
+      document.head.appendChild(script);
+    } else {
+      loadTurnstile();
+    }
+  }, [siteKey, field]);
 
   return <div ref={turnstileRef} />;
 };

@@ -5,7 +5,6 @@ import LinkedinIcon from "@/public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { useForm, Controller } from "react-hook-form";
-import axios from "axios";
 import Turnstile from "./Turnstile";
 
 interface FormData {
@@ -18,7 +17,7 @@ interface FormData {
 const ContactSection: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
 
-  const { handleSubmit, control, setValue, watch } = useForm<FormData>();
+  const { handleSubmit, control, watch } = useForm<FormData>();
   const turnstileToken = watch("turnstileToken");
 
   const onSubmit = async (data: FormData) => {
