@@ -14,7 +14,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; img-src 'self' 'unsafe-inline' *; script-src 'self' *.cloudflareinsights.com *.bintangdeveloper.eu.org https://cdn.jsdelivr.net/npm/eruda; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; object-src 'none';",
+            value: "default-src 'self'; img-src 'self' 'unsafe-inline' *; script-src 'self' *.cloudflareinsights.com *.bintangdeveloper.eu.org challenges.cloudflare.com https://cdn.jsdelivr.net/npm/eruda; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; object-src 'none';",
           },
           {
             key: 'Feature-Policy',
