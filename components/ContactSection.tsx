@@ -142,11 +142,16 @@ const ContactSection: React.FC = () => {
                 )}
               />
             </div>
-            <Turnstile
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-              control={control}
+            <Controller
               name="turnstileToken"
-              setValue={setValue}
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <Turnstile
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  field={field}
+                />
+              )}
             />
             <button
               type="submit"
