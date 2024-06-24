@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Script from 'next/script';
 import GithubIcon from "@/public/github-icon.svg";
 import LinkedinIcon from "@/public/linkedin-icon.svg";
@@ -43,10 +43,20 @@ const ContactSection: React.FC = () => {
   };
 
   // Function to handle the turnstile callback
-  const onTurnstileCallback = (token: string) => {
-    setValue('turnstileToken', token);
-    setTurnstileToken(token);
-  };
+  useEffect(() => {
+    const handleTurnstileCallback = (event: Event) => {
+      const customEvent = event as CustomEvent<{ token: string }>;
+      const token = customEvent.detail.token;
+      setValue('turnstileToken', token);
+      setTurnstileToken(token);
+    };
+
+    window.addEventListener('turnstile-callback', handleTurnstileCallback);
+
+    return () => {
+      window.removeEventListener('turnstile-callback', handleTurnstileCallback);
+    };
+  }, [setValue]);
 
   return (
     <section
@@ -169,13 +179,9 @@ const ContactSection: React.FC = () => {
       <Script id="turnstile-callback">
         {`
           function onTurnstileCallback(token) {
-            const event = new Event('turnstile-callback');
-            event.data = { token };
+            const event = new CustomEvent('turnstile-callback', { detail: { token } });
             window.dispatchEvent(event);
           }
-          window.addEventListener('turnstile-callback', function(event) {
-            ${onTurnstileCallback.toString()}(event.data.token);
-          });
         `}
       </Script>
     </section>
