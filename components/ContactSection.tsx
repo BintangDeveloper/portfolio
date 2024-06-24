@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
+import Script from 'next/script';
 import GithubIcon from "@/public/github-icon.svg";
 import LinkedinIcon from "@/public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { useForm, Controller } from "react-hook-form";
-import Turnstile from "./Turnstile";
 
 interface FormData {
   email: string;
@@ -16,9 +16,8 @@ interface FormData {
 
 const ContactSection: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
-
-  const { handleSubmit, control, watch } = useForm<FormData>();
-  const turnstileToken = watch("turnstileToken");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const { handleSubmit, control, setValue } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
     const JSONdata = JSON.stringify(data);
@@ -41,6 +40,12 @@ const ContactSection: React.FC = () => {
     } else {
       console.log("Message failed to send.", resData.error);
     }
+  };
+
+  // Function to handle the turnstile callback
+  const onTurnstileCallback = (token: string) => {
+    setValue('turnstileToken', token);
+    setTurnstileToken(token);
   };
 
   return (
@@ -146,12 +151,10 @@ const ContactSection: React.FC = () => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <Turnstile
-                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                  field={field}
-                />
+                <input {...field} type="hidden" />
               )}
             />
+            <div className="cf-turnstile" data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} data-callback="onTurnstileCallback"></div>
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
@@ -162,6 +165,19 @@ const ContactSection: React.FC = () => {
           </form>
         )}
       </div>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" />
+      <Script id="turnstile-callback">
+        {`
+          function onTurnstileCallback(token) {
+            const event = new Event('turnstile-callback');
+            event.data = { token };
+            window.dispatchEvent(event);
+          }
+          window.addEventListener('turnstile-callback', function(event) {
+            ${onTurnstileCallback.toString()}(event.data.token);
+          });
+        `}
+      </Script>
     </section>
   );
 };
