@@ -19,7 +19,7 @@ const ContactSection: React.FC = () => {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-      turnstileToken: (turnstileToken() as HTMLInputElement)
+      turnstileToken: turnstileToken,
     };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
