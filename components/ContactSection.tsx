@@ -1,33 +1,38 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Script from 'next/script';
+import React, { useState, FormEvent } from "react";
+import Turnstile, { useTurnstile } from "react-turnstile";
 import GithubIcon from "@/public/github-icon.svg";
 import LinkedinIcon from "@/public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import { useForm, Controller } from "react-hook-form";
-
-interface FormData {
-  email: string;
-  subject: string;
-  message: string;
-  turnstileToken: string;
-}
 
 const ContactSection: React.FC = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const { handleSubmit, control, setValue } = useForm<FormData>();
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  
+  const turnstile = useTurnstile();
+  const [turnstileToken, setTurnstileToken] = useState("0x0000")
 
-  const onSubmit = async (data: FormData) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = {
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      turnstileToken: turnstileToken()
+    };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/contact/send";
+    const endpoint = "/api/send";
 
+    // Form the request for sending data to the server.
     const options = {
+      // The method is POST because we are sending data.
       method: "POST",
+      // Tell the server we're sending JSON.
       headers: {
         "Content-Type": "application/json",
       },
+      // Body of the request is the JSON data we created above.
       body: JSONdata,
     };
 
@@ -37,33 +42,16 @@ const ContactSection: React.FC = () => {
     if (response.status === 200) {
       console.log("Message sent.");
       setEmailSubmitted(true);
-    } else {
-      console.log("Message failed to send.", resData.error);
     }
   };
-
-  // Function to handle the turnstile callback
-  useEffect(() => {
-    const handleTurnstileCallback = (event: Event) => {
-      const customEvent = event as CustomEvent<{ token: string }>;
-      const token = customEvent.detail.token;
-      setValue('turnstileToken', token);
-      setTurnstileToken(token);
-    };
-
-    window.addEventListener('turnstile-callback', handleTurnstileCallback);
-
-    return () => {
-      window.removeEventListener('turnstile-callback', handleTurnstileCallback);
-    };
-  }, [setValue]);
 
   return (
     <section
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      {/*
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>*/}
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
@@ -74,10 +62,10 @@ const ContactSection: React.FC = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com">
+          <Link href="github.com">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="https://linkedin.com">
+          <Link href="linkedin.com">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
@@ -88,7 +76,7 @@ const ContactSection: React.FC = () => {
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+          <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -96,20 +84,13 @@ const ContactSection: React.FC = () => {
               >
                 Your email
               </label>
-              <Controller
+              <input
                 name="email"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="email"
-                    id="email"
-                    required
-                    className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="jacob@google.com"
-                  />
-                )}
+                type="email"
+                id="email"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="jacob@google.com"
               />
             </div>
             <div className="mb-6">
@@ -119,20 +100,13 @@ const ContactSection: React.FC = () => {
               >
                 Subject
               </label>
-              <Controller
+              <input
                 name="subject"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="text"
-                    id="subject"
-                    required
-                    className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="Just saying hi"
-                  />
-                )}
+                type="text"
+                id="subject"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Just saying hi"
               />
             </div>
             <div className="mb-6">
@@ -142,48 +116,29 @@ const ContactSection: React.FC = () => {
               >
                 Message
               </label>
-              <Controller
+              <textarea
                 name="message"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <textarea
-                    {...field}
-                    id="message"
-                    className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="Let's talk about..."
-                  />
-                )}
+                id="message"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Let's talk about..."
               />
             </div>
-            <Controller
-              name="turnstileToken"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <input {...field} type="hidden" />
-              )}
-            />
-            <div className="cf-turnstile" data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} data-callback="onTurnstileCallback"></div>
+            <div>
+              <Turnstile
+              sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              onVerify={(token) => {
+                setTurnstileToken(token);
+              }}/>
+            </div>
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-              disabled={!turnstileToken}
             >
               Send Message
             </button>
           </form>
         )}
       </div>
-      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" />
-      <Script id="turnstile-callback">
-        {`
-          function onTurnstileCallback(token) {
-            const event = new CustomEvent('turnstile-callback', { detail: { token } });
-            window.dispatchEvent(event);
-          }
-        `}
-      </Script>
     </section>
   );
 };

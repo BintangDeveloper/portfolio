@@ -19,9 +19,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { email, subject, message, turnstileToken } = req.body;
 
     // Verify Turnstile token
-    const isTokenValid = await verifyTurnstileToken(turnstileToken);
-    if (!isTokenValid) {
-      return res.status(400).json({ success: false, error: 'Invalid Turnstile token' });
+    if (turnstileToken) {
+      const isTokenValid = await verifyTurnstileToken(turnstileToken);
+      if (!isTokenValid) {
+        return res.status(400).json({ success: false, error: 'Invalid Turnstile token' });
+      }
     }
 
     // Process the contact form (e.g., send email)
