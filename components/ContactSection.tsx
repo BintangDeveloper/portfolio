@@ -125,7 +125,7 @@ const ContactSection: React.FC = () => {
             </div>
             <div>
               <Turnstile
-              sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
               onVerify={(token) => {
                 setTurnstileToken(token);
               }}/>
