@@ -123,12 +123,14 @@ const ContactSection: React.FC = () => {
                 placeholder="Let's talk about..."
               />
             </div>
-            <div>
+            <div className="content-center">
               <Turnstile
-              sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-              onVerify={(token) => {
-                setTurnstileToken(token);
-              }}/>
+                sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                theme="dark"
+                onVerify={(token) => {
+                  setTurnstileToken(token);
+                }}
+              />
             </div>
             <button
               type="submit"
