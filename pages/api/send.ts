@@ -1,23 +1,35 @@
 // pages/api/send.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import axios from 'axios';
 import crypto from 'crypto';
 
 const verifyTurnstileToken = async (token: string, remoteip: string): Promise<{ success: boolean, data?: any }> => {
   const secretKey = process.env.TURNSTILE_SECRET_KEY!;
+  
+  const data = {
+    secret: secretKey,
+    response: token,
+    remoteip: remoteip
+  };
+  const JSONdata = JSON.stringify(data);
+  
+  const options = {
+    // The method is POST because we are sending data.
+    method: "POST",
+    // Tell the server we're sending JSON.
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // Body of the request is the JSON data we created above.
+    body: JSONdata,
+  };
+  
   try {
-    const response = await axios.post(
+    const response = await fetch(
       'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-      null,
-      {
-        params: {
-          secret: secretKey,
-          response: token,
-          remoteip: remoteip,
-        },
-      }
+      options
     );
-    return { success: response.data.success, data: response.data };
+    const results = await response.json(); // await the response
+    return { success: results.success, data: results };
   } catch (error) {
     console.error('Error verifying Turnstile token:', error);
     return { success: false, data: error };
@@ -33,7 +45,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const { email, subject, message, turnstileToken } = req.body;
-  const remoteip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const forwarded = req.headers['x-forwarded-for'] as string;
+  const remoteip = forwarded ? forwarded.split(',')[0] : req.socket.remoteAddress;
   const idempotencyKey = req.headers['idempotency-key'] || crypto.randomBytes(16).toString('hex');
 
   if (!email || !subject || !message || !turnstileToken) {
