@@ -124,7 +124,7 @@ const ContactSection: React.FC = () => {
                 placeholder="Let's talk about..."
               />
             </div>
-            <div className="content-center p-2.5 mr-3">
+            <div className="content-center p-4">
               <Turnstile
                 sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                 theme="dark"
