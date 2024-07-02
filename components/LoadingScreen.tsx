@@ -10,7 +10,9 @@ const LoadingScreen: React.FC = () => {
         <div></div>
         <div></div>
       </div>
-      <h1 className="text-2xl text-black dark:text-white mt-4">Loading...</h1>
+      {/*
+      <h1 className="lds-message text-2xl text-black dark:text-white mt-4">Loading...</h1>
+      */}
     </div>
   );
 };
