@@ -3,12 +3,7 @@ import React from 'react';
 
 const LoadingScreen: React.FC = () => {
   return (
-    <style>{`
-      div:not(.loading) {
-        display: none;
-      }
-    `}</style>
-    <div className="loading fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-white dark:bg-black z-50">
+    <div className="loading fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-black z-50">
       <div className="ring">
         <div></div>
         <div></div>
