@@ -8,7 +8,7 @@ const achievementsList = [
   {
     prefix: "~",
     metric: "Visits",
-    value: 160,
+    value: 2700,
   },
   {
     metric: "Projects",
@@ -17,8 +17,8 @@ const achievementsList = [
   },
   {
     prefix: "~",
-    metric: "Distribution",
-    value: 1500,
+    metric: "Contributions",
+    value: 1300,
   },
   /*
   {
