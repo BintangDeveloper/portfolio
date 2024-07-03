@@ -50,7 +50,7 @@ body {
 
 /* styles/LoadingPage.scss */
 
-.lds-ring {
+.loading .ring {
   display: inline-block;
   position: relative;
   
@@ -58,13 +58,13 @@ body {
   --lds-ring-border: 0.6rem; /* Adjust the border size here */
 }
 
-.lds-ring,
-.lds-ring div {
+.loading .ring,
+.loading .ring div {
   height: var(--lds-ring-size); /* Use the CSS variable */
   width: var(--lds-ring-size); /* Use the CSS variable */
 }
 
-.lds-ring div {
+.loading .ring div {
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border: var(--lds-ring-border) solid transparent; /* Use the CSS variable */
   border-radius: 50%;
@@ -74,15 +74,15 @@ body {
   position: absolute;
 }
 
-.lds-ring div:first-child {
+.loading .ring div:first-child {
   animation-delay: -0.45s;
 }
 
-.lds-ring div:nth-child(2) {
+.loading .ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
 
-.lds-ring div:nth-child(3) {
+.loading .ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
 
