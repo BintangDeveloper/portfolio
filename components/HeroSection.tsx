@@ -34,7 +34,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl lg:max-w-[400px]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Quisquam, voluptuous.
           </p>
