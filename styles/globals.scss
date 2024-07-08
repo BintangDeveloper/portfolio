@@ -69,23 +69,24 @@ body {
   border: var(--lds-ring-border) solid transparent; /* Use the CSS variable */
   border-radius: 50%;
   border-top-color: #ffffff;
-  /*
   box-sizing: border-box;
   display: block;
-  */
   position: absolute;
 }
 
 .loading .ring div:first-child {
   animation-delay: -0.45s;
+  border-block-color: #ffffff !important;
 }
 
 .loading .ring div:nth-child(2) {
   animation-delay: -0.3s;
+  border-block-color: #ffffff !important;
 }
 
 .loading .ring div:nth-child(3) {
   animation-delay: -0.15s;
+  border-block-color: #ffffff !important;
 }
 
 @keyframes lds-ring {
