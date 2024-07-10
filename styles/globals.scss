@@ -51,6 +51,7 @@ body {
 .loading .ring div {
   height: var(--lds-ring-size); /* Use the CSS variable */
   width: var(--lds-ring-size); /* Use the CSS variable */
+  border-block-color: #000000;
 }
 
 .loading .ring div {
@@ -94,6 +95,7 @@ body {
   border-top-color: #ff3e3e; /* Change color for gradient effect */
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-block-color: #000000;
 }
 
 .loading .ring div:nth-child(1) {
@@ -101,15 +103,15 @@ body {
 }
 
 .loading .ring div:nth-child(2) {
-  border-top-color: #000000;
-}
-
-.loading .ring div:nth-child(3) {
   border-top-color: #d62020;
 }
 
+.loading .ring div:nth-child(3) {
+  border-top-color: #ffffff;
+}
+
 .loading .ring div:nth-child(4) {
-  border-top-color: #000000;
+  border-top-color: #d62020;
 }
 
 /* Responsive adjustments */
