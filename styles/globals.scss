@@ -64,6 +64,7 @@ body {
   box-sizing: border-box;
   display: block;
   position: absolute;
+  border-block-color: #000000;
 }
 
 .loading .ring div:first-child {
@@ -96,19 +97,19 @@ body {
 }
 
 .loading .ring div:nth-child(1) {
-  border-top-color: #ff3e3e;
+  border-top-color: #ffffff;
 }
 
 .loading .ring div:nth-child(2) {
-  border-top-color: #ff8c3e;
+  border-top-color: #000000;
 }
 
 .loading .ring div:nth-child(3) {
-  border-top-color: #ffea3e;
+  border-top-color: #d62020;
 }
 
 .loading .ring div:nth-child(4) {
-  border-top-color: #3eff72;
+  border-top-color: #000000;
 }
 
 /* Responsive adjustments */
