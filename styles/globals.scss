@@ -51,7 +51,6 @@ body {
 .loading .ring div {
   height: var(--lds-ring-size); /* Use the CSS variable */
   width: var(--lds-ring-size); /* Use the CSS variable */
-  border-block-color: #000000;
 }
 
 .loading .ring div {
@@ -65,7 +64,6 @@ body {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  border-block-color: #000000;
 }
 
 .loading .ring div:first-child {
@@ -95,7 +93,6 @@ body {
   border-top-color: #ff3e3e; /* Change color for gradient effect */
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-block-color: #000000;
 }
 
 .loading .ring div:nth-child(1) {
