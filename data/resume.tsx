@@ -8,7 +8,7 @@ export const DATA = {
   location: "-",
   locationLink: "-",
   description:
-    "Full stack web developer and software modder. I love building things and helping people. Very active on Discord.",
+    "I full stack web developer and software modder. I love building things and helping people. Very active on Discord.",
   summary:
     "I am a full stack web developer with a passion for creating interactive and responsive web applications. I have experience working at web development and application modder. I am a quick learner and I am always looking to expand my knowledge and skill set. I am a team player and I am excited to work with others to create amazing applications.",
   avatarUrl: "/ProfilePicture.jpg",
