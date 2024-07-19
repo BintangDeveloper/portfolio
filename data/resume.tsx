@@ -11,11 +11,12 @@ export const DATA = {
     "Full stack web developer and software modder. I love building things and helping people. Very active on Discord.",
   summary:
     "I am a full stack web developer with a passion for creating interactive and responsive web applications. I have experience working at web development and application modder. I am a quick learner and I am always looking to expand my knowledge and skill set. I am a team player and I am excited to work with others to create amazing applications.",
-  avatarUrl: "/pp.jpg",
+  avatarUrl: "/ProfilePicture.jpg",
   skills: [
-    "React",
     "Next.js",
+    "React",
     "Typescript",
+    "Tailwindcss",
     "Node.js",
     "Laravel",
     "Php",
@@ -28,7 +29,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    { href: "#projects", icon: CodeIcon, label: "Projects" },
+    { href: "/#projects", icon: CodeIcon, label: "Projects" },
     //{ href: "#", icon: PencilLine, label: "Notes" },
   ],
   contact: {

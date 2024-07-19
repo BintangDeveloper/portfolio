@@ -7,6 +7,8 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
+import { GoogleTagManager } from '@next/third-parties/google';
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -26,11 +28,6 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     locale: "en_US",
     type: "website",
-  },
-  icons: {
-    icon: '/pp.png',
-    shortcut: '/pp.png',
-    apple: '/pp.png',
   },
   robots: {
     index: true,
@@ -60,6 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <GoogleTagManager gtmId="GTM-NMDBTCLQ" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",

@@ -1,6 +1,9 @@
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+
+import AchievementsSection from "@/components/AchievementsSection";
+
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -39,6 +42,12 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* <!-- 
+      <section id="achievements">
+        <BlurFade delay={BLUR_FADE_DELAY * 2.2}>
+          <AchievementsSection />
+        </BlurFade>
+      </section> --> */}
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
