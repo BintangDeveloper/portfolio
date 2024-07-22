@@ -43,28 +43,26 @@ export const DATA = {
 
         navbar: true,
       },
-      /*
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: '/r/' + btoa("https://dub.sh/dillion-linkedin"),
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: '/r/' + btoa("https://dub.sh/dillion-twitter"),
         icon: Icons.x,
 
         navbar: true,
       },
       Youtube: {
         name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
+        url: '/r/' + btoa("https://dub.sh/dillion-youtube"),
         icon: Icons.youtube,
         navbar: true,
       },
-      */
       email: {
         name: "Send Email",
         url: "#",
