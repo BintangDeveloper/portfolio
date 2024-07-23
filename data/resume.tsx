@@ -45,21 +45,21 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: '/r/' + btoa("https://dub.sh/dillion-linkedin"),
+        url: btoa("https://dub.sh/dillion-linkedin"),
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: '/r/' + btoa("https://dub.sh/dillion-twitter"),
+        url: btoa("https://dub.sh/dillion-twitter"),
         icon: Icons.x,
 
         navbar: true,
       },
       Youtube: {
         name: "Youtube",
-        url: '/r/' + btoa("https://dub.sh/dillion-youtube"),
+        url: btoa("https://dub.sh/dillion-youtube"),
         icon: Icons.youtube,
         navbar: true,
       },
