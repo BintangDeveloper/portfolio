@@ -43,6 +43,7 @@ export const DATA = {
 
         navbar: true,
       },
+      /*
       LinkedIn: {
         name: "LinkedIn",
         url: btoa("https://dub.sh/dillion-linkedin"),
@@ -63,6 +64,7 @@ export const DATA = {
         icon: Icons.youtube,
         navbar: true,
       },
+      */
       email: {
         name: "Send Email",
         url: "#",
