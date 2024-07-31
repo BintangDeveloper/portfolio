@@ -38,7 +38,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/bintangdeveloper",
+        url: "https://git.new/BintangDeveloper",
         icon: Icons.github,
 
         navbar: true,
