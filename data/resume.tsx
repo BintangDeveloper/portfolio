@@ -40,7 +40,6 @@ export const DATA = {
         name: "GitHub",
         url: "https://git.new/BintangDeveloper",
         icon: Icons.github,
-
         navbar: true,
       },
       /*
