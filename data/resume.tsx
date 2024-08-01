@@ -42,7 +42,7 @@ export const DATA = {
         icon: Icons.github,
         navbar: true,
       },
-      /*
+      
       LinkedIn: {
         name: "LinkedIn",
         url: btoa("https://dub.sh/dillion-linkedin"),
@@ -63,7 +63,7 @@ export const DATA = {
         icon: Icons.youtube,
         navbar: true,
       },
-      */
+      
       email: {
         name: "Send Email",
         url: "#",
@@ -87,7 +87,7 @@ export const DATA = {
       description:
         "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
     },
-    /*
+    
     {
       company: "Shopify",
       badges: [],
@@ -148,7 +148,7 @@ export const DATA = {
       description:
         "Designed and implemented a robust password encryption and browser cookie storage system in Ruby on Rails. Leveraged the Yahoo finance API to develop the dividend.com equity screener",
     },
-    */
+    
   ], 
   education: [
     {
@@ -159,7 +159,7 @@ export const DATA = {
       start: "2023",
       end: "2024",
     },
-    /*
+    
     {
       school: "University of Waterloo",
       href: "https://uwaterloo.ca",
@@ -184,7 +184,7 @@ export const DATA = {
       start: "2012",
       end: "2016",
     },
-    */
+    
   ],
   projects: [
     {
@@ -322,7 +322,7 @@ export const DATA = {
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },
-    /*
+    
     {
       title: "Hack The North",
       dates: "September 14th - 16th, 2018",
@@ -695,6 +695,5 @@ export const DATA = {
         },
       ],
     },
-    */
   ], 
 } as const;
