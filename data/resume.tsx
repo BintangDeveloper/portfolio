@@ -21,6 +21,7 @@ export const DATA = {
     "Laravel",
     "Php",
     "Docker",
+    "MySql",
     "Postgres",
     "Mongodb",
     "Java",
@@ -42,7 +43,7 @@ export const DATA = {
         icon: Icons.github,
         navbar: true,
       },
-      
+      /*
       LinkedIn: {
         name: "LinkedIn",
         url: btoa("https://dub.sh/dillion-linkedin"),
@@ -63,7 +64,7 @@ export const DATA = {
         icon: Icons.youtube,
         navbar: true,
       },
-      
+      */
       email: {
         name: "Send Email",
         url: "#",
