@@ -53,7 +53,7 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
     <div className="relative my-32" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
-        className="relative z-10 block rounded-md bg-white p-2 focus:outline-none"
+        className="relative z-10 block rounded-md bg-black text-white p-2 focus:outline-none"
       >
         <EllipsisVertical />
       </button>
