@@ -52,7 +52,7 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
     <div className="relative my-32" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
-        className="text-white"
+        className="text-white relative z-10 block rounded-md bg-white p-2 focus:outline-none"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" fill="currentColor">
           <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
