@@ -52,20 +52,10 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
     <div className="relative my-32" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
+        className="text-white"
         /*className="relative z-10 block rounded-md bg-white p-2 focus:outline-none"*/
       >
-        <svg
-          className="h-5 w-5 text-gray-800"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" fill="currentColor"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
       </button>
 
       {dropdownOpen && (
