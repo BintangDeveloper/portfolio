@@ -55,7 +55,7 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="relative z-10"
       >
-        <EllipsisVertical />
+        <EllipsisVertical className="size-4" />
       </button>
 
       {dropdownOpen && (
