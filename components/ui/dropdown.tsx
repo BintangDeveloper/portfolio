@@ -49,6 +49,7 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
   };
 
   return (
+    <>
     <div className="relative my-32" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -72,6 +73,7 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
