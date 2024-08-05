@@ -12,7 +12,7 @@ interface DropdownProps {
 }
 
 const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,14 +49,14 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
   };
 
   return (
-    <>
     <div className="relative my-32" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="text-white"
-        /*className="relative z-10 block rounded-md bg-white p-2 focus:outline-none"*/
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" fill="currentColor"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" fill="currentColor">
+          <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+        </svg>
       </button>
 
       {dropdownOpen && (
@@ -73,7 +73,6 @@ const Dropdown: FC<DropdownProps> = ({ direction = 'down', items = [] }) => {
         </div>
       )}
     </div>
-    </>
   );
 };
 
