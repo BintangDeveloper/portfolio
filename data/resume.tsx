@@ -214,7 +214,7 @@ export const DATA = {
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.svf",
+        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.base64.mp4",
     },
     {
       title: "Magic UI",
@@ -246,7 +246,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.svf",
+      video: "https://cdn.magicui.design/bento-grid.base64.mp4",
     },
     {
       title: "llm.report",
@@ -279,7 +279,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://cdn.llm.report/openai-demo.svf",
+      video: "https://cdn.llm.report/openai-demo.base64.mp4",
     },
     {
       title: "Automatic Chat",
@@ -308,7 +308,7 @@ export const DATA = {
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.svf",
+        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.base64.mp4",
     },
   ],
   hackathons: [
