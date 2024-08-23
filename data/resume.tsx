@@ -3,7 +3,7 @@ import {
   HomeIcon, 
   NotebookIcon, 
   CodeIcon, 
-  ChartColumn,
+  FileChartColumn,
   PencilLine 
 } from "lucide-react";
 
@@ -37,7 +37,7 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
     { href: "/#projects", icon: CodeIcon, label: "Projects" },
-    { href: "#", icon: ChartColumn, label: "Statistics" },
+    { href: "#", icon: FileChartColumn, label: "Statistics" },
     { href: "#", icon: PencilLine, label: "Notes" },
   ],
   contact: {
