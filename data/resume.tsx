@@ -1,5 +1,11 @@
 import { Icons } from "@/components/icons";
-import { CodeIcon, HomeIcon, NotebookIcon, PencilLine } from "lucide-react";
+import { 
+  HomeIcon, 
+  NotebookIcon, 
+  CodeIcon, 
+  ChartColumn,
+  PencilLine 
+} from "lucide-react";
 
 export const DATA = {
   name: "BintangDeveloper",
@@ -31,7 +37,8 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
     { href: "/#projects", icon: CodeIcon, label: "Projects" },
-    //{ href: "#", icon: PencilLine, label: "Notes" },
+    { href: "#", icon: ChartColumn, label: "Statistics" },
+    { href: "#", icon: PencilLine, label: "Notes" },
   ],
   contact: {
     email: "contact@bintangdeveloper.eu.org",
@@ -73,6 +80,14 @@ export const DATA = {
         navbar: false,
       },
     },
+  },
+  
+  github: {
+    username: "BintangDeveloper",
+    url: {
+      homepage: "https://git.new/BintangDeveloper",
+      api: ""
+    }
   },
 
   work: [
