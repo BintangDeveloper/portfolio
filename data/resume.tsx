@@ -36,9 +36,9 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    { href: "/#projects", icon: CodeIcon, label: "Projects" },
-    { href: "#", icon: ChartColumn, label: "Statistics" },
-    { href: "#", icon: PencilLine, label: "Notes" },
+    { href: "/projects", icon: CodeIcon, label: "Projects" },
+    { href: "/stats", icon: ChartColumn, label: "Statistics" },
+    //{ href: "#", icon: PencilLine, label: "Notes" },
   ],
   contact: {
     email: "contact@bintangdeveloper.eu.org",
