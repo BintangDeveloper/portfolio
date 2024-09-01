@@ -12,7 +12,7 @@ const sticker = new Sticker(image, {
     pack: 'Testing', // The pack name
     author: '@NaviAI', // The author name
     type: StickerTypes.FULL, // The sticker type
-    categories: ['🤩', '🎉'], // The sticker category
+    categories: ['🎉'], // The sticker category
     id: '286090429', // The sticker id
     quality: 50, // The quality of the output file
     background: '#000000' // The sticker background color (only for full stickers)
