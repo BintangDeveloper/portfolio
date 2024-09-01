@@ -35,8 +35,7 @@
     "tailwindcss-animate": "^1.0.7",
     "unified": "^11.0.4",
     
-    "@next/third-parties": "^14.2.5",
-    "wa-sticker-formatter": "^4.4.4"
+    "@next/third-parties": "^14.2.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
