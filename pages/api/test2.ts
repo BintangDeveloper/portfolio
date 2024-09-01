@@ -6,11 +6,11 @@ import * as path from 'path'
 // Define the API route handler
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<void> // Use `void` because we are sending an image, not JSON
+  res: NextApiResponse<Buffer | { message: string }> // Allow Buffer or an error message
 ) {
   try {
     // Define file path and read the image file
-    const filePath = path.resolve('@/public/gt.png'); // Ensure the file is in the public directory
+    const filePath = path.resolve('./public/gt.png'); // Ensure the file is in the public directory
     const image = fs.readFileSync(filePath);
 
     // Create the sticker
