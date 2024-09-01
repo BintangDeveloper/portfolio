@@ -1,12 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { Sticker, StickerTypes } from 'wa-sticker-formatter'
-import * as fs from 'fs'
-import * as path from 'path'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { Sticker, StickerTypes } from 'wa-sticker-formatter';
+import * as fs from 'fs';
+import * as path from 'path';
 
-// Define the API route handler
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Buffer | { message: string }> // Allow Buffer or an error message
+  res: NextApiResponse<Buffer | { message: string }>
 ) {
   try {
     // Define file path and read the image file
@@ -24,11 +23,19 @@ export default async function handler(
       background: '#000000',
     });
 
-    // Generate buffer from sticker
-    const buffer = await sticker.toBuffer();
+    // Generate buffer from sticker, with webp output if `d=true`
+    const downloadAsWebp = req.query.d === 'true';
+    const buffer = downloadAsWebp ? await sticker.toBuffer('webp') : await sticker.toBuffer();
 
-    // Set the content type and send the image
-    res.setHeader('Content-Type', 'image/png');
+    // Set headers based on the format
+    if (downloadAsWebp) {
+      res.setHeader('Content-Type', 'image/webp');
+      res.setHeader('Content-Disposition', 'attachment; filename="sticker.webp"');
+    } else {
+      res.setHeader('Content-Type', 'image/png');
+    }
+
+    // Send the image
     res.status(200).send(buffer);
   } catch (error) {
     console.error('Error generating sticker:', error);
