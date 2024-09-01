@@ -10,7 +10,7 @@ export default async function handler(
 ) {
   try {
     // Define file path and read the image file
-    const filePath = path.resolve('./public/gt.png'); // Ensure the file is in the public directory
+    const filePath = path.resolve('@/public/gt.png'); // Ensure the file is in the public directory
     const image = fs.readFileSync(filePath);
 
     // Create the sticker
