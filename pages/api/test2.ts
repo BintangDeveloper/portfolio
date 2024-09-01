@@ -2,11 +2,16 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Sticker, createSticker, StickerTypes } from 'wa-sticker-formatter'
 
-import image from './gt.png'
+import * as fs from 'fs';
+import * as path from 'path';
  
 type ResponseData = {
   message: string
 }
+
+const filePath = path.resolve('./gt.png');
+
+const image = fs.readFileSync(filePath);
 
 const sticker = new Sticker(image, {
     pack: 'Testing', // The pack name
