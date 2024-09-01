@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Sticker, createSticker, StickerTypes } from 'wa-sticker-formatter'
 
-import image from 'gt.png'
+import image from './gt.png'
  
 type ResponseData = {
   message: string
