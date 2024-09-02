@@ -12,7 +12,7 @@ const fileToBuffer = (file: File): Promise<Buffer> => {
   });
 };
 
-function makeid(length) {
+function makeid(length: int): string {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
