@@ -9,7 +9,7 @@ const items = [
 ];
 
 
-export default function test() {
+export default function test1() {
   return (
     <Dropdown direction="up" items={items} />
   );
