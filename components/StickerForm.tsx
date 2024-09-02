@@ -3,15 +3,17 @@ import React, { useState } from 'react';
 import { Sticker, StickerTypes } from 'wa-sticker-formatter';
 
 export default function StickerForm() {
-  const [image, setImage] = useState(null);
-  const [stickerUrl, setStickerUrl] = useState('');
+  const [image, setImage] = useState<File | null>(null);
+  const [stickerUrl, setStickerUrl] = useState<string>('');
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
+  // Type for the event is React.ChangeEvent<HTMLInputElement>
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files ? e.target.files[0] : null;
     setImage(file);
   };
 
-  const handleSubmit = async (e) => {
+  // Type for the event is React.FormEvent<HTMLFormElement>
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!image) {
