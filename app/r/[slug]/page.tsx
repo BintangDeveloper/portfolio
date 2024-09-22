@@ -1,3 +1,4 @@
+"use client"
 // app/r/[slug]/page.tsx
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
