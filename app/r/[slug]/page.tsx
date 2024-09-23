@@ -1,6 +1,6 @@
 "use client"
 // app/r/[slug]/page.tsx
-import { useEffect } from 'react';
+import { useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
 type RedirectConfig = {
@@ -24,7 +24,7 @@ const lIcon = (
   </svg>
 );
 
-function generate(icon, message) {
+function generate(icon: ReactNode, message: string) {
   return (
     <section id="redirect" className="flex items-center justify-center h-screen bg-gray-100">
       <div className="text-center">
