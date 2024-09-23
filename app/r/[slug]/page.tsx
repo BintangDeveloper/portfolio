@@ -26,8 +26,8 @@ const lIcon = (
 
 function generate(icon: ReactNode, message: string) {
   return (
-    <section id="redirect" className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="text-center">
+    <section id="redirect" className="flex items-center justify-center h-screen bg-black text-white">
+      <div className="text-center ccontent-center">
         <div className="text-6xl mb-4">
           {icon}
         </div>
@@ -42,8 +42,7 @@ function generate(icon: ReactNode, message: string) {
 // Define the redirects as an array of key-value pairs
 const redirects: RedirectConfig[] = [
   { key: 'home', url: '/' },
-  { key: 'about', url: '/about' },
-  { key: 'contact', url: '/contact' },
+  { key: 'app', url: 'https://app.BintangDeveloper.eu.org/' },
   { key: 'p1a', url: 'https://drive.google.com/drive/folders/10oXoOcBY3W77lmvTjXE6Ym3hHlc88OX5' },
   // Add more routes as needed
 ];
