@@ -18,7 +18,7 @@ const errorIcon = (
 const lIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="48px" height="48px">
     <circle cx="50" cy="50" r="35" stroke="#000" stroke-width="10" stroke-linecap="round"/>
-    <path fill="#000" d="M67 50a17 17 0 0 1-17 17v10a27 27 0 0 0 27-27h-10Z">
+    <path fill="#fff" d="M67 50a17 17 0 0 1-17 17v10a27 27 0 0 0 27-27h-10Z">
       <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50"/>
     </path>
   </svg>
@@ -45,6 +45,8 @@ const redirects: RedirectConfig[] = [
   { key: 'app', url: 'https://app.BintangDeveloper.eu.org/' },
   { key: 'p1a', url: 'https://drive.google.com/drive/folders/10oXoOcBY3W77lmvTjXE6Ym3hHlc88OX5' },
   // Add more routes as needed
+  { key: 'usb10', url: 'https://docs.google.com/forms/d/e/1FAIpQLSd2NZU0dBmik8x1qsANTLUhNyp2v6fnCUtwkNB45xKBhnD7UQ/viewform' },
+  { key: 'usb11', url: 'https://docs.google.com/forms/d/e/1FAIpQLSekVcl-DjmQu7CyA7v4ptzly2Yq683mMl9u9nz7FR1YoMkyRA/viewform' }
 ];
 
 export default function RedirectPage({ params }: { params: { slug: string } }) {
