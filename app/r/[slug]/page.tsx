@@ -46,7 +46,7 @@ const redirects: RedirectConfig[] = [
   { key: 'p1a', url: 'https://drive.google.com/drive/folders/10oXoOcBY3W77lmvTjXE6Ym3hHlc88OX5' },
   // Add more routes as needed
   { key: 'usb10', url: 'https://docs.google.com/forms/d/e/1FAIpQLSd2NZU0dBmik8x1qsANTLUhNyp2v6fnCUtwkNB45xKBhnD7UQ/viewform' },
-  { key: 'usb11', url: 'https://docs.google.com/forms/d/e/1FAIpQLSekVcl-DjmQu7CyA7v4ptzly2Yq683mMl9u9nz7FR1YoMkyRA/viewform' }
+  { key: 'usb11', url: 'https://docs.google.com/forms/d/e/1FAIpQLSekVcl-DjmQu7CyA7v4ptzly2Yq683mMl9u9nz7FR1YoMkyRA/viewform' },
 ];
 
 export default function RedirectPage({ params }: { params: { slug: string } }) {
