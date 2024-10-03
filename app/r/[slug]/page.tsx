@@ -71,5 +71,5 @@ export default function RedirectPage({ params }: { params: { slug: string } }) {
     return generate(errorIcon, 'Redirect not found');
   }
 
-  return generate(lIcon, 'Redirecting to {slug} in 3 seconds...');
+  return generate(lIcon, 'Redirecting to ' + slug + ' in 3 seconds...');
 }
