@@ -6,7 +6,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { SosialButtons } from "@/components/sosial-buttons";
+import SosialButtons from "@/components/sosial-buttons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
