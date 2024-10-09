@@ -230,8 +230,8 @@ export default function Page() {
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
               </p>
-              <SosialButtons social={DATA.social}/>
             </div>
+            <SosialButtons social={DATA.social}/>
           </BlurFade>
         </div>
       </section>
