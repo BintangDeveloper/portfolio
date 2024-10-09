@@ -26,7 +26,7 @@ export function SosialButtons({ social }: SosialButtonsProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon width="28" height="28" className="text-gray-800 dark:text-gray-100" />
+            <Icon width="18" height="18" className="text-gray-800 dark:text-gray-100" />
           </a>
         );
       })}
