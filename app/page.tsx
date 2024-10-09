@@ -231,7 +231,7 @@ export default function Page() {
                 soliciting.
               </p>
             </div>
-            <SosialButtons social={DATA.social}/>
+            <SosialButtons social={DATA.contact.social}/>
           </BlurFade>
         </div>
       </section>
