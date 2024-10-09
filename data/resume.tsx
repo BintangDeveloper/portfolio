@@ -74,7 +74,7 @@ export const DATA = {
       */
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:me@bintangdeveloper.eu.org",
         icon: Icons.email,
 
         navbar: false,
