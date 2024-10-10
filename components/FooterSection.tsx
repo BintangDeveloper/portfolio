@@ -29,7 +29,7 @@ export default function FooterSection({ social }: SosialButtonsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon />
+                  <Icon width="16" height="16" className="text-gray-800 dark:text-gray-100" />
                 </a>
               );
             })}
