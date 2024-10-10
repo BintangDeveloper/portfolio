@@ -27,7 +27,7 @@ export default function FooterSection({ social }: SosialButtonsProps) {
                 <a
                   key={key}
                   href={social[key].url}
-                  className="w-9 h-9 rounded-full bg-gray-700 dark:bg-gray-900 flex justify-center color-white dark:color-black items-center hover:bg-indigo-600 dark:hover:bg-indigo-500 p-2"
+                  className="w-9 h-9 rounded-full bg-gray-700 dark:bg-gray-900 flex justify-center color-white dark:color-white items-center hover:bg-indigo-600 dark:hover:bg-indigo-500 p-2"
                   aria-label={social[key].name}
                   target="_blank"
                   rel="noopener noreferrer"
