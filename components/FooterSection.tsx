@@ -17,6 +17,9 @@ export default function FooterSection({ social }: SosialButtonsProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="py-7 border-t border-gray-200 dark:border-gray-600">
           <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+            <span className="pt-4 text-sm text-gray-500 dark:text-gray-400">
+              ©<a href="https://BintangDeveloper.eu.org/">BintangDeveloper</a> 2024, All rights reserved.
+            </span>
             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
               {Object.keys(social).map((key) => { 
               const Icon = social[key].icon;
@@ -34,9 +37,6 @@ export default function FooterSection({ social }: SosialButtonsProps) {
               );
             })}
             </div>
-            <span className="pt-4 text-sm text-gray-500 dark:text-gray-400">
-              ©<a href="https://BintangDeveloper.eu.org/">BintangDeveloper</a> 2024, All rights reserved.
-            </span>
           </div>
         </div>
       </div>
