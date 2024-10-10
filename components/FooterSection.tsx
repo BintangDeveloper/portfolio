@@ -13,7 +13,7 @@ type SosialButtonsProps = {
 
 export default function FooterSection({ social }: SosialButtonsProps) {
   return (
-    <footer className="w-full">
+    <footer className="w-full mt-4">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="py-7 border-t border-gray-200 dark:border-gray-600">
           <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
@@ -24,7 +24,7 @@ export default function FooterSection({ social }: SosialButtonsProps) {
                 <a
                   key={key}
                   href={social[key].url}
-                  className="w-9 h-9 rounded-full bg-gray-700 dark:bg-gray-900 flex justify-center items-center hover:bg-indigo-600 dark:hover:bg-indigo-500"
+                  className="w-9 h-9 rounded-full bg-gray-700 dark:bg-gray-900 flex justify-center items-center hover:bg-indigo-600 dark:hover:bg-indigo-500 p-2"
                   aria-label={social[key].name}
                   target="_blank"
                   rel="noopener noreferrer"
